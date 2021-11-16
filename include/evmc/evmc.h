@@ -68,7 +68,7 @@ typedef struct evmc_bytes32 evmc_uint256be;
 typedef struct evmc_address
 {
     /** The 20 bytes of the hash. */
-    uint8_t bytes[20];
+    uint8_t bytes[32];
 } evmc_address;
 
 /** The kind of call-like instruction. */
@@ -148,11 +148,11 @@ struct evmc_tx_context
 {
     evmc_uint256be tx_gas_price;     /**< The transaction gas price. */
     evmc_address tx_origin;          /**< The transaction origin account. */
-    evmc_address block_coinbase;     /**< The miner of the block. */
-    int64_t block_number;            /**< The block number. */
+    //evmc_address block_coinbase;     /**< The miner of the block. */
+    //int64_t block_number;            /**< The block number. */
     int64_t block_timestamp;         /**< The block timestamp. */
-    int64_t block_gas_limit;         /**< The block gas limit. */
-    evmc_uint256be block_difficulty; /**< The block difficulty. */
+    //int64_t block_gas_limit;         /**< The block gas limit. */
+    //evmc_uint256be block_difficulty; /**< The block difficulty. */
 };
 
 struct evmc_context;
@@ -642,8 +642,8 @@ struct evmc_host_interface
     /** Get transaction context callback function. */
     evmc_get_tx_context_fn get_tx_context;
 
-    /** Get block hash callback function. */
-    evmc_get_block_hash_fn get_block_hash;
+    ///** Get block hash callback function. */
+    //evmc_get_block_hash_fn get_block_hash;
 
     /** Emit log callback function. */
     evmc_emit_log_fn emit_log;
